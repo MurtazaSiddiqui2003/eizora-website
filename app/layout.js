@@ -3,7 +3,6 @@ import "./globals.css";
 export const metadata = {
   title: "Eizora Labs — Make digital mean business",
   description: "An independent digital commerce studio building thoughtful websites, Shopify storefronts, and useful e-commerce experiences.",
-  metadataBase: new URL("https://eizoralabs.com"),
   openGraph: {
     title: "Eizora Labs — Make digital mean business",
     description: "Independent digital commerce studio. Strategy, design, and development.",
