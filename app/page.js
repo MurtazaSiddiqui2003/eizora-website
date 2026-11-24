@@ -1,205 +1,72 @@
 const services = [
-  {
-    number: "01",
-    title: "Shopify Development",
-    description: "Thoughtful storefronts built to make shopping clearer, easier, and more effective.",
-  },
-  {
-    number: "02",
-    title: "Custom Websites",
-    description: "Fast, responsive websites that give growing businesses a confident digital home.",
-  },
-  {
-    number: "03",
-    title: "E-commerce Improvements",
-    description: "Practical upgrades to product pages, navigation, mobile experience, and conversion flow.",
-  },
-  {
-    number: "04",
-    title: "Landing Pages",
-    description: "Focused pages that communicate your offer and help turn attention into action.",
-  },
+  ["01", "Shopify development", "Storefronts with a clear point of view, built around the way your customers actually shop."],
+  ["02", "Custom websites", "Fast, considered websites that give growing businesses a stronger digital home."],
+  ["03", "E-commerce refinement", "Sharper product pages, smoother journeys, and practical improvements to the details that matter."],
+  ["04", "Landing pages", "Focused pages that make your offer easier to understand — and easier to act on."],
 ];
 
-const process = [
-  {
-    number: "01 / Understand",
-    title: "Start with the why",
-    description: "We learn about your business, customers, goals, and the problem the project needs to solve.",
-  },
-  {
-    number: "02 / Build",
-    title: "Make it purposeful",
-    description: "We shape the experience, develop the details, and keep you involved as the work takes form.",
-  },
-  {
-    number: "03 / Improve",
-    title: "Launch with clarity",
-    description: "We test the important details, hand everything over clearly, and identify what to improve next.",
-  },
+const steps = [
+  ["01", "Listen first", "We get to know the business, the people it serves, and what needs to change."],
+  ["02", "Make with intent", "We design and build around the real brief. No unnecessary layers, no mystery."],
+  ["03", "Leave it better", "We test, refine, and hand over work you can confidently move forward with."],
 ];
 
 export default function Home() {
   return (
-    <main className="site-shell">
-      <header className="site-header">
-        <div className="container header-inner">
-          <a className="brand" href="#top" aria-label="Eizora Labs home">
-            <span className="brand-mark">e.</span>
-            <span>EIZORA <small>LABS</small></span>
-          </a>
-          <nav className="nav-links" aria-label="Main navigation">
-            <a href="#services">Services</a>
-            <a href="#work">Selected work</a>
-            <a href="#approach">Our approach</a>
-            <a href="#about">About</a>
-          </nav>
-          <a className="header-cta" href="#contact">Let&apos;s talk <span>↗</span></a>
-        </div>
+    <main id="top">
+      <header className="masthead">
+        <a className="wordmark" href="#top" aria-label="Eizora Labs home"><span className="mark">E</span><span>EIZORA<span className="wordmark-light"> LABS</span></span></a>
+        <nav aria-label="Main navigation"><a href="#services">Capabilities</a><a href="#work">Selected directions</a><a href="#studio">Studio</a></nav>
+        <a className="masthead-cta" href="#contact">Start a conversation <span>↗</span></a>
       </header>
 
-      <section className="hero" id="top">
-        <div className="container hero-grid">
-          <div>
-            <span className="eyebrow">Digital commerce & technology studio</span>
-            <h1>We build digital experiences that <em>move business forward.</em></h1>
-            <p className="hero-copy">
-              Eizora Labs helps growing brands create better websites and e-commerce
-              experiences — combining thoughtful design, practical technology, and a
-              focus on what matters to customers.
-            </p>
-            <div className="hero-actions">
-              <a className="button-primary" href="#contact">Start a project <span>↗</span></a>
-              <a className="button-secondary" href="#services">Explore what we do <span>↓</span></a>
-            </div>
-            <div className="hero-note"><span className="status-dot" /> Independent studio. Built around your next step.</div>
-          </div>
-          <div className="visual-stage" aria-label="Abstract Eizora Labs brand composition">
-            <div className="float-tag one"><b>Digital, with intention.</b>Strategy meets craft</div>
-            <div className="visual-card">
-              <div className="visual-card-top"><span>EL / 001</span><span>Studio notes</span></div>
-              <div className="visual-monogram">e.</div>
-              <div className="visual-card-bottom">
-                <strong>Make it matter.</strong>
-                <span>Design / Build / Grow</span>
-              </div>
-            </div>
-            <div className="float-tag two"><b>Thoughtful by design</b>Useful by default</div>
-          </div>
+      <section className="hero">
+        <div className="hero-kicker"><span className="kicker-line" /> INDEPENDENT DIGITAL COMMERCE STUDIO <span className="hero-location">KARACHI · WORKING EVERYWHERE</span></div>
+        <div className="hero-title-wrap">
+          <h1>Make digital<br /><em>mean</em> business<span className="hero-period">.</span></h1>
+          <div className="hero-aside"><span className="aside-index">[ E / 001 ]</span><p>We turn good ideas into useful digital experiences — built with clarity, craft, and a healthy respect for the details.</p><a href="#services">Explore our capabilities <span>↓</span></a></div>
+        </div>
+        <div className="hero-bottom">
+          <span>STRATEGY / DESIGN / DEVELOPMENT</span>
+          <span className="hero-stamp">BUILT TO BE USEFUL<span>®</span></span>
+          <span>SCROLL TO EXPLORE ↓</span>
+        </div>
+        <div className="hero-art" aria-hidden="true"><div className="art-ring ring-a" /><div className="art-ring ring-b" /><div className="art-cross">+</div><div className="art-caption">FORM FOLLOWS<br />FUNCTION.</div><div className="art-number">001—026</div></div>
+      </section>
+
+      <section className="intro-band">
+        <div className="section-index">01 / THE POINT OF VIEW</div>
+        <div className="intro-copy"><p>Good digital work is not decoration. It should make things <em>clearer, easier, faster</em> — for the people using it and the people running the business.</p><span>That’s the standard we work towards.</span></div>
+      </section>
+
+      <section className="section services-section" id="services">
+        <div className="section-topline"><span>02 / WHAT WE DO</span><span>CAPABILITIES — 04</span></div>
+        <div className="section-heading-row"><h2>Build the<br /><em>right thing.</em></h2><p>From the first click to the final checkout, we make digital touchpoints work harder for the brands behind them.</p></div>
+        <div className="service-list">{services.map(([n, title, desc]) => <article className="service-row" key={n}><span className="row-number">{n}</span><h3>{title}</h3><p>{desc}</p><span className="row-arrow">↗</span></article>)}</div>
+      </section>
+
+      <section className="work-section" id="work">
+        <div className="section-topline"><span>03 / SELECTED DIRECTIONS</span><span>AN EXPLORATION OF OUR CRAFT</span></div>
+        <div className="work-heading"><h2>Ideas, made<br /><em>tangible.</em></h2><p>Two visual explorations of the kind of digital worlds we like to create. Concept work — not client case studies.</p></div>
+        <div className="concept-grid">
+          <article className="concept concept-one"><div className="concept-top"><span>CONCEPT STUDY / 01</span><span>COMMERCE</span></div><div className="concept-visual"><div className="concept-circle" /><span className="concept-serif">Objects<br />of <i>everyday</i><br />wonder.</span><span className="concept-mini">CURATED GOODS · EST. 2026</span></div><div className="concept-caption"><h3>Commerce, with character.</h3><span>01 — STOREFRONT DIRECTION</span></div></article>
+          <article className="concept concept-two"><div className="concept-top"><span>CONCEPT STUDY / 02</span><span>IDENTITY</span></div><div className="concept-visual"><span className="daily-word">THE<br /><i>DAILY</i><br />EDIT<span className="daily-star">✳</span></span><div className="daily-bar">A GOOD THING, EVERY DAY. <span>↗</span></div></div><div className="concept-caption"><h3>A digital home with a voice.</h3><span>02 — BRAND WEBSITE DIRECTION</span></div></article>
         </div>
       </section>
 
-      <section className="section" id="services">
-        <div className="container">
-          <div className="section-heading">
-            <div>
-              <span className="eyebrow">What we do</span>
-              <h2>Digital foundations for ambitious businesses.</h2>
-            </div>
-            <p>From a sharper storefront to a brand-new website, we focus on useful work that helps your business take its next step.</p>
-          </div>
-          <div className="services-grid">
-            {services.map((service) => (
-              <article className="service-card" key={service.number}>
-                <span className="service-number">{service.number}</span>
-                <h3>{service.title}</h3>
-                <p>{service.description}</p>
-              </article>
-            ))}
-          </div>
-        </div>
+      <section className="approach-section">
+        <div className="section-topline"><span>04 / THE METHOD</span><span>NO SMOKE. NO MIRRORS.</span></div>
+        <div className="approach-layout"><h2>Clear heads.<br /><em>Good work.</em></h2><div className="steps">{steps.map(([n, title, desc]) => <article className="step" key={n}><span>{n} /</span><div><h3>{title}</h3><p>{desc}</p></div></article>)}</div></div>
       </section>
 
-      <section className="section work-section" id="work">
-        <div className="container">
-          <div className="section-heading">
-            <div>
-              <span className="eyebrow">Selected work</span>
-              <h2>Good work starts with a clear point of view.</h2>
-            </div>
-            <p>A glimpse into the kinds of digital experiences we love shaping. These are illustrative directions, not client case studies.</p>
-          </div>
-          <div className="work-grid">
-            <article className="work-card">
-              <div className="work-art">form & function</div>
-              <div className="work-meta">
-                <div><h3>Commerce, considered.</h3><p>Illustrative storefront direction</p></div>
-                <span className="work-label">Concept  /  01</span>
-              </div>
-            </article>
-            <article className="work-card">
-              <div className="work-art">the daily edit</div>
-              <div className="work-meta">
-                <div><h3>A more focused digital home.</h3><p>Illustrative brand website direction</p></div>
-                <span className="work-label">Concept  /  02</span>
-              </div>
-            </article>
-          </div>
-        </div>
+      <section className="studio-section" id="studio">
+        <div className="studio-graphic"><span className="studio-e">E</span><span className="studio-graphic-note">INDEPENDENT BY NATURE<br />INTENTIONAL BY DESIGN</span></div>
+        <div className="studio-copy"><div className="section-index">05 / THE STUDIO</div><h2>Small studio.<br /><em>Wide lens.</em></h2><p>Eizora Labs is an independent digital studio founded by Murtaza Siddiqui. We bring design thinking and hands-on development together to help growing businesses build a stronger presence online.</p><p>We believe in useful ideas, honest collaboration, and making every detail earn its place.</p><div className="founder-line"><span>MURTAZA SIDDIQUI</span><span>FOUNDER / BUILDER</span></div></div>
       </section>
 
-      <section className="section" id="approach">
-        <div className="container">
-          <div className="section-heading">
-            <div>
-              <span className="eyebrow">How we work</span>
-              <h2>Small steps. Clear thinking. Work that works.</h2>
-            </div>
-            <p>No unnecessary complexity. Just a collaborative process that keeps the goal in sight from the first conversation to launch.</p>
-          </div>
-          <div className="process-grid">
-            {process.map((item) => (
-              <article className="process-item" key={item.number}>
-                <span>{item.number}</span>
-                <h3>{item.title}</h3>
-                <p>{item.description}</p>
-              </article>
-            ))}
-          </div>
-        </div>
-      </section>
+      <section className="contact-section" id="contact"><div className="section-topline"><span>06 / YOUR NEXT MOVE</span><span>GOOD THINGS START WITH A CONVERSATION</span></div><div className="contact-main"><h2>Have a good<br />one in <em>mind?</em></h2><div className="contact-right"><p>Tell us what you’re building, fixing, or figuring out. We’ll bring curiosity and a practical point of view.</p><a className="contact-link" href="https://github.com/MurtazaSiddiqui2003" target="_blank" rel="noreferrer">Connect with the founder <span>↗</span></a><span className="contact-note">EMAIL CONTACT COMING SOON</span></div></div></section>
 
-      <section className="section about-band" id="about">
-        <div className="container about-grid">
-          <div className="about-mark">e.</div>
-          <div>
-            <span className="eyebrow">A little about the studio</span>
-            <h2>Independent thinking. Hands-on building.</h2>
-            <p>
-              Eizora Labs is an independent digital studio founded by Murtaza Siddiqui.
-              We bring design thinking and practical development together to help
-              businesses make their online experiences more useful, more considered,
-              and easier to grow.
-            </p>
-            <div className="about-signoff">Murtaza Siddiqui <span>— Founder</span></div>
-          </div>
-        </div>
-      </section>
-
-      <section className="contact-section" id="contact">
-        <div className="container contact-inner">
-          <div>
-            <span className="eyebrow">Have something in mind?</span>
-            <h2>Let&apos;s make your next digital move a good one.</h2>
-          </div>
-          <div>
-            <p>Tell us a little about your business and what you want to improve. We&apos;ll take it from there.</p>
-            <div className="contact-actions">
-              <a className="button-primary" href="mailto:">Start a conversation <span>↗</span></a>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <footer className="site-footer">
-        <div className="container footer-inner">
-          <span>© {new Date().getFullYear()} Eizora Labs. Built with intention.</span>
-          <div className="footer-links">
-            <a href="#top">Back to top ↑</a>
-            <a href="https://github.com/MurtazaSiddiqui2003" target="_blank" rel="noreferrer">GitHub ↗</a>
-          </div>
-        </div>
-      </footer>
+      <footer className="footer"><a className="footer-brand" href="#top">EIZORA LABS<span>®</span></a><span>INDEPENDENT DIGITAL COMMERCE STUDIO</span><div><a href="#top">BACK TO TOP ↑</a><a href="https://github.com/MurtazaSiddiqui2003" target="_blank" rel="noreferrer">GITHUB ↗</a></div><small>© {new Date().getFullYear()} EIZORA LABS. MADE WITH INTENTION.</small></footer>
     </main>
   );
 }
