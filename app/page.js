@@ -46,11 +46,22 @@ export default function Home() {
       </section>
 
       <section className="work-section" id="work">
-        <div className="section-topline"><span>03 / SELECTED DIRECTIONS</span><span>AN EXPLORATION OF OUR CRAFT</span></div>
-        <div className="work-heading"><h2>Ideas, made<br /><em>tangible.</em></h2><p>Two visual explorations of the kind of digital worlds we like to create. Concept work — not client case studies.</p></div>
+        <div className="section-topline"><span>03 / SELECTED WORK</span><span>BUILT, NOT JUST IMAGINED</span></div>
+        <div className="work-heading"><h2>Work with<br /><em>a point of view.</em></h2><p>A mix of live builds and visual explorations. Every project is clearly identified — because good work deserves honest context.</p></div>
+        <article className="featured-project">
+          <a className="portfolio-preview" href="https://murtazasiddiqui.vercel.app/" target="_blank" rel="noreferrer" aria-label="Visit Murtaza Siddiqui portfolio">
+            <div className="preview-browser"><span /><span /><span /><i>murtazasiddiqui.vercel.app</i></div>
+            <div className="preview-screen"><span className="preview-kicker">INDEPENDENT WEB DEVELOPER</span><strong>Digital experiences<br />made <em>to move</em><br />business forward.</strong><span className="preview-footer">MURTAZA SIDDIQUI — SELECTED WORK ↗</span></div>
+            <span className="preview-open">VIEW LIVE PROJECT ↗</span>
+          </a>
+          <div className="featured-project-info">
+            <div><span className="project-type">IN-HOUSE PROJECT / 01</span><h3>Murtaza Siddiqui — Personal Portfolio</h3><p>A personal portfolio designed and developed to present web projects, case studies, services and a growing body of work. Includes a project archive and a private project-management workflow.</p><div className="project-tags"><span>Next.js</span><span>JavaScript</span><span>Responsive design</span><span>Content management</span></div></div>
+            <a className="project-visit" href="https://murtazasiddiqui.vercel.app/" target="_blank" rel="noreferrer">EXPLORE PROJECT <span>↗</span></a>
+          </div>
+        </article>
         <div className="concept-grid">
-          <article className="concept concept-one"><div className="concept-top"><span>CONCEPT STUDY / 01</span><span>COMMERCE</span></div><div className="concept-visual"><div className="concept-circle" /><span className="concept-serif">Objects<br />of <i>everyday</i><br />wonder.</span><span className="concept-mini">CURATED GOODS · EST. 2026</span></div><div className="concept-caption"><h3>Commerce, with character.</h3><span>01 — STOREFRONT DIRECTION</span></div></article>
-          <article className="concept concept-two"><div className="concept-top"><span>CONCEPT STUDY / 02</span><span>IDENTITY</span></div><div className="concept-visual"><span className="daily-word">THE<br /><i>DAILY</i><br />EDIT<span className="daily-star">✳</span></span><div className="daily-bar">A GOOD THING, EVERY DAY. <span>↗</span></div></div><div className="concept-caption"><h3>A digital home with a voice.</h3><span>02 — BRAND WEBSITE DIRECTION</span></div></article>
+          <article className="concept concept-one"><div className="concept-top"><span>CONCEPT STUDY / 02</span><span>COMMERCE</span></div><div className="concept-visual"><div className="concept-circle" /><span className="concept-serif">Objects<br />of <i>everyday</i><br />wonder.</span><span className="concept-mini">CURATED GOODS · EST. 2026</span></div><div className="concept-caption"><h3>Commerce, with character.</h3><span>STOREFRONT DIRECTION</span></div></article>
+          <article className="concept concept-two"><div className="concept-top"><span>CONCEPT STUDY / 03</span><span>IDENTITY</span></div><div className="concept-visual"><span className="daily-word">THE<br /><i>DAILY</i><br />EDIT<span className="daily-star">✳</span></span><div className="daily-bar">A GOOD THING, EVERY DAY. <span>↗</span></div></div><div className="concept-caption"><h3>A digital home with a voice.</h3><span>BRAND WEBSITE DIRECTION</span></div></article>
         </div>
       </section>
 
