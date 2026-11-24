@@ -32,7 +32,7 @@ export default async function CaseStudyPage({ params }) {
         {sections.map(([label, body], index) => <article className="case-content-row" key={label}><span>0{index+1} / {label}</span><div><h2>{["A clear purpose.","Thought through.","Made to move things forward."][index]}</h2><p>{body}</p></div></article>)}
         <article className="case-content-row"><span>04 / DELIVERABLES</span><div><h2>What went into it.</h2><ul>{project.deliverables.map(item => <li key={item}>{item}</li>)}</ul></div></article>
       </section>
-      <section className="case-end"><p>HAVE A PROJECT IN MIND?</p><h2>Let's make<br /><em>it mean something.</em></h2><Link href="/#contact" className="case-live">START A CONVERSATION ↗</Link><Link href="/#work" className="case-back-bottom">BACK TO SELECTED WORK ↑</Link></section>
+      <section className="case-end"><p>HAVE A PROJECT IN MIND?</p><h2>Let&apos;s make<br /><em>it mean something.</em></h2><Link href="/#contact" className="case-live">START A CONVERSATION ↗</Link><Link href="/#work" className="case-back-bottom">BACK TO SELECTED WORK ↑</Link></section>
       <footer className="footer"><Link className="footer-brand" href="/">EIZORA LABS<span>®</span></Link><span>INDEPENDENT DIGITAL COMMERCE STUDIO</span><small>© {new Date().getFullYear()} EIZORA LABS. MADE WITH INTENTION.</small></footer>
     </main>
   );
