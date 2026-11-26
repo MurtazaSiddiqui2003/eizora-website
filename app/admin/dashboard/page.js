@@ -24,7 +24,7 @@ export default function AdminDashboard() {
     if (!response.ok) throw new Error(data.error || "Unable to load leads.");
     setLeads(data.leads || []);
     setSelected(current => current || data.leads?.[0]?.id || "");
-  }
+  }, [router]);
 
   useEffect(() => { load().catch(err => setError(err.message)).finally(() => setLoading(false)); }, [load]);
 
