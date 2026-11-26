@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useMemo, useState } from "react";
+import { useCallback, useEffect, useMemo, useState } from "react";
 import { useRouter } from "next/navigation";
 
 const labels = { new: "New", contacted: "Contacted", proposal_sent: "Proposal sent", won: "Won", lost: "Lost" };
@@ -17,7 +17,7 @@ export default function AdminDashboard() {
   const active = leads.find(lead => lead.id === selected);
   const visible = useMemo(() => filter === "all" ? leads : leads.filter(lead => lead.status === filter), [leads, filter]);
 
-  async function load() {
+  const load = useCallback(async () => {
     const response = await fetch("/api/admin/leads", { cache: "no-store" });
     const data = await response.json();
     if (response.status === 401) { router.replace("/admin"); return; }
@@ -26,7 +26,7 @@ export default function AdminDashboard() {
     setSelected(current => current || data.leads?.[0]?.id || "");
   }
 
-  useEffect(() => { load().catch(err => setError(err.message)).finally(() => setLoading(false)); }, []);
+  useEffect(() => { load().catch(err => setError(err.message)).finally(() => setLoading(false)); }, [load]);
 
   async function updateLead(changes) {
     if (!active) return;
