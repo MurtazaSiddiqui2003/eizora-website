@@ -18,8 +18,8 @@ export default function Home() {
     <main id="top">
       <header className="masthead">
         <a className="wordmark" href="#top" aria-label="Eizora Labs home"><span className="mark">E</span><span>EIZORA<span className="wordmark-light"> LABS</span></span></a>
-        <nav aria-label="Main navigation"><a href="#services">Capabilities</a><a href="#work">Selected directions</a><a href="#studio">Studio</a></nav>
-        <a className="masthead-cta" href="#contact">Start a conversation <span>↗</span></a>
+        <nav aria-label="Main navigation"><a href="/services">Services</a><a href="#work">Selected work</a><a href="#studio">Studio</a></nav>
+        <a className="masthead-cta" href="/start-project">Start a project <span>↗</span></a>
       </header>
 
       <section className="hero">
@@ -42,9 +42,9 @@ export default function Home() {
       </section>
 
       <section className="section services-section" id="services">
-        <div className="section-topline"><span>02 / WHAT WE DO</span><span>CAPABILITIES — 04</span></div>
+        <div className="section-topline"><span>02 / WHAT WE DO</span><a href="/services">EXPLORE SERVICES ↗</a></div>
         <div className="section-heading-row"><h2>Build the<br /><em>right thing.</em></h2><p>From the first click to the final checkout, we make digital touchpoints work harder for the brands behind them.</p></div>
-        <div className="service-list">{services.map(([n, title, desc]) => <article className="service-row" key={n}><span className="row-number">{n}</span><h3>{title}</h3><p>{desc}</p><span className="row-arrow">↗</span></article>)}</div>
+        <div className="service-list">{services.map(([n, title, desc]) => <a className="service-row" href="/services" key={n}><span className="row-number">{n}</span><h3>{title}</h3><p>{desc}</p><span className="row-arrow">↗</span></a>)}</div>
       </section>
 
       <section className="work-section" id="work">
@@ -70,9 +70,9 @@ export default function Home() {
         <div className="studio-copy"><div className="section-index">05 / THE STUDIO</div><h2>Small studio.<br /><em>Wide lens.</em></h2><p>Eizora Labs is an independent digital studio founded by Murtaza Siddiqui. We bring design thinking and hands-on development together to help growing businesses build a stronger presence online.</p><p>We believe in useful ideas, honest collaboration, and making every detail earn its place.</p><div className="founder-line"><span>MURTAZA SIDDIQUI</span><span>FOUNDER / BUILDER</span></div></div>
       </section>
 
-      <section className="contact-section" id="contact"><div className="section-topline"><span>06 / YOUR NEXT MOVE</span><span>GOOD THINGS START WITH A CONVERSATION</span></div><div className="contact-main"><h2>Have a good<br />one in <em>mind?</em></h2><div className="contact-right"><p>Tell us what you’re building, fixing, or figuring out. We’ll bring curiosity and a practical point of view.</p><a className="contact-link" href="https://github.com/MurtazaSiddiqui2003" target="_blank" rel="noreferrer">Connect with the founder <span>↗</span></a><span className="contact-note">EMAIL CONTACT COMING SOON</span></div></div></section>
+      <section className="contact-section" id="contact"><div className="section-topline"><span>06 / YOUR NEXT MOVE</span><span>GOOD THINGS START WITH A CONVERSATION</span></div><div className="contact-main"><h2>Have a good<br />one in <em>mind?</em></h2><div className="contact-right"><p>Tell us what you’re building, fixing, or figuring out. We’ll bring curiosity and a practical point of view.</p><a className="contact-link" href="/start-project">Tell us about your project <span>↗</span></a><a className="contact-whatsapp" href="https://wa.me/923099864045" target="_blank" rel="noreferrer">Or message us on WhatsApp ↗</a></div></div></section>
 
-      <footer className="footer"><a className="footer-brand" href="#top">EIZORA LABS<span>®</span></a><span>INDEPENDENT DIGITAL COMMERCE STUDIO</span><div><a href="#top">BACK TO TOP ↑</a><a href="https://github.com/MurtazaSiddiqui2003" target="_blank" rel="noreferrer">GITHUB ↗</a></div><small>© {new Date().getFullYear()} EIZORA LABS. MADE WITH INTENTION.</small></footer>
+      <footer className="footer"><a className="footer-brand" href="#top">EIZORA LABS<span>®</span></a><span>INDEPENDENT DIGITAL COMMERCE STUDIO</span><div><a href="/services">SERVICES ↗</a><a href="/start-project">START A PROJECT ↗</a></div><small>© {new Date().getFullYear()} EIZORA LABS. MADE WITH INTENTION.</small></footer>
     </main>
   );
 }
