@@ -19,6 +19,32 @@ export async function POST(request) {
     if (!response.ok || !data.access_token) {
       return NextResponse.json({ error: data.msg || data.message || data.error_description || "Invalid email or password. If you just registered, confirm your email first." }, { status: 401 });
     }
+
+    const userResponse = await fetch(`${url}/auth/v1/user`, {
+      headers: { apikey: key, Authorization: `Bearer ${data.access_token}` },
+      cache: "no-store",
+    });
+    const user = await userResponse.json();
+    if (!userResponse.ok || String(user.email || "").toLowerCase() !== adminEmail.toLowerCase()) {
+      return NextResponse.json({ error: "Your account could not be verified for admin access." }, { status: 403 });
+    }
+
+    const activation = await fetch(`${url}/rest/v1/lead_admins`, {
+      method: "POST",
+      headers: {
+        apikey: key,
+        Authorization: `Bearer ${data.access_token}`,
+        "Content-Type": "application/json",
+        Prefer: "resolution=ignore-duplicates,return=minimal",
+      },
+      body: JSON.stringify({ user_id: user.id }),
+      cache: "no-store",
+    });
+    if (!activation.ok) {
+      console.error("Admin activation failed:", activation.status, await activation.text());
+      return NextResponse.json({ error: "Your login is valid, but admin access could not be activated. Please contact the site administrator." }, { status: 403 });
+    }
+
     const result = NextResponse.json({ ok: true });
     result.cookies.set("eizora_admin_token", data.access_token, {
       httpOnly: true,
