@@ -6,7 +6,8 @@ export const metadata = {
   description: "Tell Eizora Labs about your website or Shopify project. Share your goals and requirements to start a conversation."
 };
 
-export default async function StartProjectPage({ searchParams }) {\n  const params = await searchParams;
+export default async function StartProjectPage({ searchParams }) {
+  const params = await searchParams;
   return <main className="business-page">
     <header className="business-nav"><Link className="wordmark" href="/"><span className="mark">E</span><span>EIZORA<span className="wordmark-light"> LABS</span></span></Link><nav><Link href="/services">Services</Link><Link href="/#work">Selected work</Link></nav><Link className="business-nav-cta" href="/">Back to home ↗</Link></header>
     <section className="inquiry-hero"><span className="business-kicker">PROJECT INQUIRY / 01</span><h1>Tell us what<br/><em>you're thinking.</em></h1><p>A little context helps us understand what you need and whether we're the right fit. Share as much as you know — it's okay if some details are still taking shape.</p></section>
