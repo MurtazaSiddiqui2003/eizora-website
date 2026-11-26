@@ -31,7 +31,7 @@ export default function ProjectInquiryForm({ initialService = "" }) {
   }
 
   return <form className="project-form" onSubmit={submit}>
-    <div className="form-heading"><span>PROJECT DETAILS / REQUIRED FIELDS MARKED *</span><p>We'll use these details to prepare for an initial conversation.</p></div>
+    <div className="form-heading"><span>PROJECT DETAILS / REQUIRED FIELDS MARKED *</span><p>We&apos;ll use these details to prepare for an initial conversation.</p></div>
     <div className="form-grid">{inputFields.map(field => <label className="form-field" key={field.name}><span>{field.label}{field.required ? " *" : ""}</span><input name={field.name} type={field.type || "text"} placeholder={field.placeholder} value={form[field.name]} onChange={update} required={field.required}/></label>)}</div>
     <label className="form-field"><span>Current website / store (optional)</span><input name="website" type="url" placeholder="https://..." value={form.website} onChange={update}/></label>
     <label className="form-field"><span>Which service are you interested in? *</span><select name="service" value={form.service} onChange={update} required><option value="">Choose a service</option><option>Shopify Store Tune-up</option><option>Shopify Store Upgrade</option><option>Custom Website Development</option><option>Not sure — help me decide</option></select></label>
