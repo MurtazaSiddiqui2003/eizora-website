@@ -251,3 +251,85 @@ body{background:var(--paper);color:var(--ink)}
   .work-section,.approach-section,.studio-section,.contact-section{background:#0b0e13}
   .intro-band{background:#151c28}
 }
+
+
+/* Public services and project inquiry experience */
+.service-row{color:inherit;text-decoration:none}
+.service-row:hover h3{color:#9bb0ff}
+.contact-whatsapp{display:block;margin-top:16px;color:#aab6cb;font:9px var(--mono);text-transform:uppercase}
+.section-topline a{color:#aebbd1;font:9px var(--mono);letter-spacing:.08em}
+.business-page{min-height:100vh;background:#0b0e13;color:#f1f3f7}
+.business-nav{height:78px;padding:0 5.2vw;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid #2a303b}
+.business-nav nav{display:flex;gap:30px;color:#9aa3b2;font:10px var(--mono);text-transform:uppercase}
+.business-nav-cta{font:10px var(--mono);text-transform:uppercase;border-bottom:1px solid #cbd2df;padding:10px 0}
+.business-hero{padding:90px 10.4vw 58px;background:#121925}
+.business-kicker,.business-section-top{font:10px var(--mono);letter-spacing:.12em;color:#9aaddc}
+.business-hero h1,.inquiry-hero h1{font-size:clamp(68px,10vw,130px);line-height:.86;letter-spacing:-.09em;font-weight:500;margin:42px 0 30px}
+.business-hero h1 em,.inquiry-hero h1 em,.business-terms h2 em,.business-cta h2 em,.inquiry-aside h2 em{font-family:var(--serif);font-weight:500;color:#91a8ff}
+.business-hero>p,.inquiry-hero>p{max-width:620px;color:#aeb8c8;font-size:15px;line-height:1.85}
+.business-hero-meta{display:flex;gap:35px;flex-wrap:wrap;margin-top:55px;padding-top:17px;border-top:1px solid #354157;color:#8795ad;font:9px var(--mono);letter-spacing:.1em}
+.offer-list{padding:80px 10.4vw 95px}
+.business-section-top{display:flex;justify-content:space-between;padding-bottom:16px;border-bottom:1px solid #303949}
+.offer-card{padding:42px 0 48px;border-bottom:1px solid #303949}
+.offer-heading{display:flex;justify-content:space-between;color:#8d9bb2;font:9px var(--mono);letter-spacing:.1em}
+.offer-title-row{display:flex;justify-content:space-between;align-items:end;gap:25px;margin:30px 0 14px}
+.offer-title-row h2{font-size:clamp(32px,4.8vw,58px);font-weight:500;letter-spacing:-.07em;margin:0}
+.offer-price{text-align:right;white-space:nowrap}
+.offer-price strong{display:block;font-size:22px;font-weight:500;color:#91a8ff}
+.offer-price span{font-size:9px;color:#929daf}
+.offer-intro{max-width:650px;color:#aeb8c8;font-size:14px;line-height:1.8}
+.offer-details{display:grid;grid-template-columns:1fr 1fr;gap:70px;margin-top:30px}
+.offer-details h3{font-size:12px;font-weight:600;margin:0 0 15px}
+.offer-details ul{list-style:none;padding:0;margin:0}
+.offer-details li{padding:9px 0;border-bottom:1px solid #242d3b;color:#b5bfd0;font-size:12px}
+.offer-details li:before{content:"+";color:#91a8ff;margin-right:12px}
+.offer-exclusions p{max-width:420px;color:#929daf;font-size:12px;line-height:1.8}
+.offer-exclusions a{display:inline-block;margin-top:15px;padding-bottom:9px;border-bottom:1px solid #91a8ff;color:#cbd7f0;font:10px var(--mono);text-transform:uppercase}
+.offer-exclusions a span{margin-left:20px}
+.business-terms{padding:85px 10.4vw;background:#121925;display:grid;grid-template-columns:.8fr 1.2fr;gap:8%}
+.business-terms h2,.inquiry-aside h2{font-size:clamp(48px,6vw,76px);line-height:.92;letter-spacing:-.08em;font-weight:500;margin:35px 0 0}
+.terms-grid{display:grid;grid-template-columns:1fr 1fr;gap:35px 28px}
+.terms-grid article{border-top:1px solid #354157;padding-top:17px}
+.terms-grid b{font:9px var(--mono);color:#91a8ff}
+.terms-grid h3{font-size:17px;font-weight:500;margin:16px 0 8px}
+.terms-grid p{font-size:12px;line-height:1.8;color:#aab5c7;margin:0}
+.business-cta{padding:95px 10.4vw}
+.business-cta>span{font:10px var(--mono);letter-spacing:.12em;color:#9aaddc}
+.business-cta h2{font-size:clamp(65px,9vw,115px);line-height:.86;letter-spacing:-.09em;font-weight:500;margin:35px 0}
+.business-cta>p{max-width:430px;color:#aeb8c8;font-size:13px;line-height:1.8}
+.business-cta>a{display:inline-block;margin-top:22px;padding:16px 20px;background:#7896ff;color:#080b12;font:10px var(--mono);text-transform:uppercase}
+.business-footer{padding:25px 5.2vw;background:#07090d;display:flex;justify-content:space-between;align-items:center;gap:20px;color:#aeb8c8;font:9px var(--mono);letter-spacing:.08em}
+.business-footer>a:first-child{color:#f1f3f7;font-weight:700;font-size:13px}
+.inquiry-hero{padding:85px 10.4vw 55px;background:#121925}
+.inquiry-hero h1{font-size:clamp(62px,9vw,112px)}
+.inquiry-layout{padding:70px 10.4vw 100px;display:grid;grid-template-columns:.7fr 1.3fr;gap:9%}
+.inquiry-aside>span,.form-heading>span{font:9px var(--mono);letter-spacing:.12em;color:#91a8ff}
+.inquiry-aside h2{font-size:clamp(42px,5vw,64px);margin:28px 0}
+.inquiry-aside>p{max-width:330px;color:#9eabc0;font-size:13px;line-height:1.9}
+.inquiry-contact{margin-top:45px;padding-top:17px;border-top:1px solid #303949;display:flex;flex-direction:column;gap:13px}
+.inquiry-contact b{font:9px var(--mono);color:#8997ad}
+.inquiry-contact a{color:#c8d4ed;font-size:12px}
+.project-form{display:flex;flex-direction:column;gap:22px}
+.form-heading{padding-bottom:20px;border-bottom:1px solid #303949}
+.form-heading p{font-size:12px;color:#9eabc0;margin:10px 0 0}
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.form-field{display:flex;flex-direction:column;gap:9px;min-width:0}
+.form-field>span{font:9px var(--mono);letter-spacing:.06em;color:#b5c0d1}
+.form-field input,.form-field select,.form-field textarea{width:100%;border:1px solid #303949;border-radius:0;background:#111824;color:#f1f3f7;padding:14px;font:12px var(--sans);outline:none}
+.form-field input:focus,.form-field select:focus,.form-field textarea:focus{border-color:#7896ff}
+.form-field input::placeholder,.form-field textarea::placeholder{color:#6f7b90}
+.form-field select{color-scheme:dark}
+.form-field textarea{resize:vertical;min-height:140px;line-height:1.7}
+.form-submit{display:flex;justify-content:space-between;align-items:center;border:0;border-radius:0;background:#7896ff;color:#080b12;padding:18px 20px;font:10px var(--mono);text-transform:uppercase;cursor:pointer}
+.form-submit:hover{background:#9bb0ff}
+.form-privacy{margin:-10px 0 0;color:#7f8ba0;font-size:10px;line-height:1.6}
+.form-error{margin:0;color:#ff9b9b;font-size:12px}
+@media(max-width:700px){
+.business-nav{height:68px;padding:0 20px}.business-nav nav{display:none}.business-nav-cta{font-size:8px}
+.business-hero,.inquiry-hero{padding:65px 22px 42px}.business-hero h1,.inquiry-hero h1{font-size:clamp(58px,15vw,85px);margin:32px 0 24px}
+.business-hero-meta{gap:15px;font-size:7px}.offer-list{padding:60px 22px 70px}.business-section-top{font-size:8px;gap:15px}
+.offer-card{padding:32px 0}.offer-heading{font-size:8px}.offer-title-row{display:block}.offer-title-row h2{font-size:37px}.offer-price{text-align:left;margin-top:17px}.offer-price strong{display:inline;font-size:19px}.offer-price span{display:block;margin-top:5px}
+.offer-details{grid-template-columns:1fr;gap:25px}.business-terms{padding:65px 22px;grid-template-columns:1fr;gap:40px}.terms-grid{gap:25px 18px}
+.business-cta{padding:70px 22px}.business-footer{padding:22px;flex-wrap:wrap;font-size:8px}.business-footer span{display:none}
+.inquiry-layout{padding:55px 22px 75px;grid-template-columns:1fr;gap:45px}.inquiry-aside h2{font-size:54px}.form-grid{grid-template-columns:1fr;gap:20px}
+}
