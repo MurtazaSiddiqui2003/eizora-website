@@ -14,8 +14,13 @@ export default function AdminDashboard() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
   const [saving, setSaving] = useState(false);
+  const [followUpDate, setFollowUpDate] = useState("");
   const active = leads.find(lead => lead.id === selected);
   const visible = useMemo(() => filter === "all" ? leads : leads.filter(lead => lead.status === filter), [leads, filter]);
+
+  useEffect(() => {
+    setFollowUpDate(dateValue(active?.follow_up_at));
+  }, [active?.id, active?.follow_up_at]);
 
   const load = useCallback(async () => {
     const response = await fetch("/api/admin/leads", { cache: "no-store" });
@@ -61,7 +66,10 @@ export default function AdminDashboard() {
             <div className="lead-detail-head"><div><span>INQUIRY / {active.id.slice(0, 8).toUpperCase()}</span><h2>{active.business || active.name}</h2><p>{active.name} · {new Date(active.created_at).toLocaleString()}</p></div><a href={`https://wa.me/${String(active.phone || "").replace(/[^0-9]/g, "")}`} target="_blank" rel="noreferrer">WHATSAPP ↗</a></div>
             <div className="lead-facts"><div><span>EMAIL</span><a href={`mailto:${active.email}`}>{active.email}</a></div><div><span>PHONE</span><p>{active.phone || "Not provided"}</p></div><div><span>SERVICE</span><p>{active.service}</p></div><div><span>BUDGET</span><p>{active.budget || "Not decided"}</p></div><div><span>TIMELINE</span><p>{active.timeline || "Flexible"}</p></div><div><span>WEBSITE</span>{active.website ? <a href={active.website} target="_blank" rel="noreferrer">{active.website}</a> : <p>Not provided</p>}</div></div>
             <div className="lead-description"><span>PROJECT DETAILS</span><p>{active.details}</p></div>
-            <div className="lead-edit-grid"><label>STATUS<select value={active.status} onChange={e => updateLead({ status: e.target.value })}>{Object.entries(labels).map(([key,label]) => <option key={key} value={key}>{label}</option>)}</select></label><label>FOLLOW-UP DATE<input type="date" value={dateValue(active.follow_up_at)} onChange={e => updateLead({ follow_up_at: e.target.value ? new Date(`${e.target.value}T12:00:00`).toISOString() : null })}/></label></div>
+            <div className="lead-edit-grid">
+              <label>STATUS<select value={active.status} onChange={e => updateLead({ status: e.target.value })}>{Object.entries(labels).map(([key,label]) => <option key={key} value={key}>{label}</option>)}</select></label>
+              <label>FOLLOW-UP DATE<input type="date" value={followUpDate} onChange={e => setFollowUpDate(e.target.value)}/><button type="button" disabled={saving || followUpDate === dateValue(active.follow_up_at)} onClick={() => updateLead({ follow_up_at: followUpDate ? new Date(`${followUpDate}T12:00:00`).toISOString() : null })}>{saving ? "SAVING…" : "SAVE DATE ↗"}</button></label>
+            </div>
             <label className="lead-notes">INTERNAL NOTES<textarea key={active.id} defaultValue={active.internal_notes || ""} rows="4" placeholder="Add conversation notes, next steps, proposal details…"/><button disabled={saving} onClick={e => updateLead({ internal_notes: e.currentTarget.previousElementSibling.value })}>{saving ? "SAVING…" : "SAVE NOTES ↗"}</button></label>
           </>}
         </section>
