@@ -465,3 +465,21 @@ body{background:var(--paper);color:var(--ink)}
   .portfolio-archive .work-grid{grid-template-columns:1fr}
   .portfolio-end{padding:70px 22px}
 }
+
+
+/* Live previews in the full portfolio archive */
+.portfolio-live-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:42px 22px;margin-top:58px}
+.portfolio-live-card{min-width:0}
+.portfolio-live-card .live-preview-viewport{height:480px}
+.portfolio-live-card .work-card-info{display:flex;align-items:flex-start;gap:18px;padding:20px 2px;border-color:#303949}
+.portfolio-live-card .work-card-info>div:first-child{min-width:0}
+.portfolio-live-card .work-card-info h3{font-size:23px;font-weight:500;margin:9px 0}
+.portfolio-live-card .work-card-info p{font-size:12px;line-height:1.75;color:#a4adbc;margin:0;max-width:470px}
+.portfolio-card-actions{display:flex;flex-direction:column;align-items:flex-end;gap:18px;flex-shrink:0}
+.portfolio-case-link{font:8px var(--mono);letter-spacing:.06em;color:#cbd7f0;border-bottom:1px solid #7896ff;padding-bottom:8px;white-space:nowrap}
+@media(max-width:700px){
+  .portfolio-live-grid{grid-template-columns:1fr;gap:30px;margin-top:38px}
+  .portfolio-live-card .live-preview-viewport{height:390px}
+  .portfolio-live-card .work-card-info{display:block}
+  .portfolio-card-actions{align-items:flex-start;margin-top:17px;gap:12px}
+}
