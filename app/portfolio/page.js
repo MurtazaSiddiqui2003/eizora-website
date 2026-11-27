@@ -1,4 +1,5 @@
 import Link from "next/link";
+import ProjectPreview from "../components/ProjectPreview";
 import { caseStudies } from "../work/case-studies";
 
 const featured = ["sterling-bloom", "crc-core", "eishas-collection", "junaids-portfolio"];
@@ -23,20 +24,22 @@ export default function PortfolioPage() {
       </section>
       <section className="portfolio-archive">
         <div className="section-topline"><span>THE PROJECT INDEX</span><span>{Object.keys(caseStudies).length} ENTRIES</span></div>
-        <div className="work-grid">
+        <div className="portfolio-live-grid">
           {Object.entries(caseStudies).map(([slug, project]) => (
-            <Link className="work-card" href={`/work/${slug}`} key={slug}>
-              <div className="work-card-art">
-                <span>{project.number} / {featured.includes(slug) ? "FEATURED" : "PROJECT"}</span>
-                <strong>{project.title}</strong>
-                <i>{project.category}</i>
-                <b>↗</b>
-              </div>
+            <article className="portfolio-live-card" key={slug}>
+              <ProjectPreview url={project.url} title={project.title} />
               <div className="work-card-info">
-                <div><span className="project-type">{project.category}</span><h3>{project.title}</h3><p>{project.summary}</p></div>
-                <span className="work-card-status">{project.status}</span>
+                <div>
+                  <span className="project-type">{project.category}</span>
+                  <h3>{project.title}</h3>
+                  <p>{project.summary}</p>
+                </div>
+                <div className="portfolio-card-actions">
+                  <span className="work-card-status">{project.status}</span>
+                  <Link className="portfolio-case-link" href={`/work/${slug}`}>VIEW CASE STUDY ↗</Link>
+                </div>
               </div>
-            </Link>
+            </article>
           ))}
         </div>
       </section>
