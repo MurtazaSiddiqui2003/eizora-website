@@ -167,7 +167,8 @@ export const caseStudies = {
       "Web development exploration",
       "More specific details and a public preview will be added when the project is ready to share."
     ],
-    "outcome": "https://for-my-eisha.vercel.app/"
+    "outcome": "A personal creative project currently presented as a concept. The live preview is provided separately for exploration.",
+    "url": "https://for-my-eisha.vercel.app/"
   },
   "experiments": {
     "number": "010",
