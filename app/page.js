@@ -1,4 +1,5 @@
 import { caseStudies } from "./work/case-studies";
+import ProjectPreview from "./components/ProjectPreview";
 
 const services = [
   ["01", "Shopify development", "Storefronts with a clear point of view, built around the way your customers actually shop."],
@@ -18,7 +19,7 @@ export default function Home() {
     <main id="top">
       <header className="masthead">
         <a className="wordmark" href="#top" aria-label="Eizora Labs home"><span className="mark">E</span><span>EIZORA<span className="wordmark-light"> LABS</span></span></a>
-        <nav aria-label="Main navigation"><a href="/services">Services</a><a href="#work">Selected work</a><a href="#studio">Studio</a></nav>
+        <nav aria-label="Main navigation"><a href="/services">Services</a><a href="/portfolio">Portfolio</a><a href="#studio">Studio</a></nav>
         <a className="masthead-cta" href="/start-project">Start a project <span>↗</span></a>
       </header>
 
@@ -50,14 +51,21 @@ export default function Home() {
       <section className="work-section" id="work">
         <div className="section-topline"><span>03 / SELECTED WORK</span><span>BUILT, NOT JUST IMAGINED</span></div>
         <div className="work-heading"><h2>Work with<br /><em>a point of view.</em></h2><p>A mix of live builds and visual explorations. Every project is clearly identified — because good work deserves honest context.</p></div>
-        <div className="work-grid">
-          {Object.entries(caseStudies).map(([slug, project]) => (
-            <a className="work-card" href={`/work/${slug}`} key={slug}>
-              <div className="work-card-art"><span>{project.number}</span><strong>{project.title}</strong><i>{project.category}</i><b>↗</b></div>
-              <div className="work-card-info"><div><span className="project-type">{project.category}</span><h3>{project.title}</h3><p>{project.summary}</p></div><span className="work-card-status">{project.status}</span></div>
-            </a>
-          ))}
+        <div className="featured-work-grid">
+          {["sterling-bloom", "crc-core", "eishas-collection", "junaids-portfolio"].map((slug) => {
+            const project = caseStudies[slug];
+            return (
+              <article className="featured-work-card" key={slug}>
+                <ProjectPreview url={project.url} title={project.title} />
+                <div className="featured-work-info">
+                  <div><span className="project-type">{project.category}</span><h3>{project.title}</h3><p>{project.summary}</p></div>
+                  <a href={`/work/${slug}`} className="featured-work-detail">PROJECT DETAILS ↗</a>
+                </div>
+              </article>
+            );
+          })}
         </div>
+        <div className="work-archive-cta"><a href="/portfolio">SEE MORE WORK <span>↗</span></a><p>Explore the wider collection of projects, concepts, and experiments.</p></div>
       </section>
 
       <section className="approach-section">
