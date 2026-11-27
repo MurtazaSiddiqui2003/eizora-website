@@ -42,7 +42,7 @@ export default function PortfolioPage() {
       </section>
       <section className="portfolio-end">
         <span>HAVE SOMETHING IN MIND?</span>
-        <h2>Let's build<br /><em>what's next.</em></h2>
+        <h2>Let&apos;s build<br /><em>what's next.</em></h2>
         <Link href="/start-project">START A PROJECT ↗</Link>
       </section>
       <footer className="footer"><Link className="footer-brand" href="/">EIZORA LABS<span>®</span></Link><span>INDEPENDENT DIGITAL COMMERCE STUDIO</span><div><Link href="/services">SERVICES ↗</Link><Link href="/start-project">START A PROJECT ↗</Link></div><small>© {new Date().getFullYear()} EIZORA LABS. MADE WITH INTENTION.</small></footer>
